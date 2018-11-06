@@ -18,6 +18,8 @@ import {AppRoutingModule} from './app-routing.module';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import {DataStorageService} from './shared/data-storage.service';
+import {AngularGridComponent} from './angular-grid/angular-grid.component';
+import {AgGridModule} from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -31,14 +33,16 @@ import {DataStorageService} from './shared/data-storage.service';
     ShoppingEditComponent,
     DropdownDirective,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    AngularGridComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgGridModule.withComponents(null)
   ],
   providers: [RecipeService, ShoppingListService, DataStorageService],
   bootstrap: [AppComponent]
